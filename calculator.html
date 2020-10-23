@@ -1,0 +1,49 @@
+<html>
+	<head><title>calculator</title>
+		
+	</head>
+	 
+		<style>
+		
+			.calculator{
+			    padding:50px;
+				margin:50px;
+			
+			}
+			.button{
+				width:15%;
+			}
+			
+			.button1{
+				width:15%;
+				
+			}
+
+		</style>
+	<body background="a.png">
+<div class="calculator" style="width:20%;" >
+		<form name="forms" align="center"/>
+		<input type="text" name="result" /><br><br>
+		<input class="button" type="button" value="1" onclick="forms.result.value+='1'"/>
+		<input class="button" type="button" value="2" onclick="forms.result.value+='2'"/>
+		<input class="button" type="button" value="3" onclick="forms.result.value+='3'"/><br>
+		<input class="button" type="button" value="4" onclick="forms.result.value+='4'"/>
+		<input class="button" type="button" value="5" onclick="forms.result.value+='5'"/>
+		<input class="button" type="button" value="6" onclick="forms.result.value+='6'"/><br>
+		<input class="button" type="button" value="7" onclick="forms.result.value+='7'"/>
+		<input class="button" type="button" value="8" onclick="forms.result.value+='8'"/>
+		<input class="button" type="button" value="9" onclick="forms.result.value+='9'"/><br>
+		<input class="button" type="button" value="." onclick="forms.result.value+='.'"/>
+		<input class="button" type="button" value="0" onclick="forms.result.value+='0'"/>
+		<input class="button" type="button" value="=" onclick="forms.result.value=eval(forms.result.value)"/><br>
+	
+		
+		<input class="button1" type="button" value="+" onclick="forms.result.value+='+'"/>
+		<input class="button1" type="button" value="-" onclick="forms.result.value+='-'"/>
+		<input class="button1" type="button" value="*" onclick="forms.result.value+='*'"/><br>
+		<input class="button1" type="button" value="/" onclick="forms.result.value+='/'"/>
+		<input class="button" type="button" value="C" onclick="forms.result.value=null"/>
+</div>		
+	</body>
+	
+</html>
