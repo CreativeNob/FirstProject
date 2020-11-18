@@ -4,54 +4,32 @@
 
 /* package codechef; // don't place package name! */
 
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-// combinations of balanced parentheses 
-import java.io.*; 
-  
-class Main  
-{ 
-    // Function that print all combinations of  
-    // balanced parentheses 
-    // open store the count of opening parenthesis 
-    // close store the count of closing parenthesis 
-    static void _printParenthesis(char str[], int pos, int n, int open, int close) 
-    { 
-        if(close == n)  
-        { 
-            // print the possible combinations 
-            for(int i=0;i<str.length;i++) 
-                System.out.print(str[i]); 
-            System.out.println(); 
-            return; 
-        } 
-        else
-        { 
-            if(open > close) { 
-                str[pos] = ')'; 
-                _printParenthesis(str, pos+1, n, open, close+1); 
-            } 
-            if(open < n) { 
-                str[pos] = '('; 
-                _printParenthesis(str, pos+1, n, open+1, close); 
-            } 
-        } 
-    } 
-      
-    // Wrapper over _printParenthesis() 
-    static void printParenthesis(char str[], int n) 
-    { 
-        if(n > 0) 
-        _printParenthesis(str, 0, n, 0, 0); 
-        return; 
-    } 
-      
-    // driver program  
-    public static void main (String[] args)  
-    { 
-        int n = 3; 
-        char[] str = new char[2 * n]; 
-        printParenthesis(str, n); 
-    } 
-} 
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{    
+     static void solve(int l, int r, int i, char[] str) {
+        if (l == 0 && r == 0) {
+            System.out.println(new String(str));
+        } else {
+            if (l > 0) {
+                str[i] = '(';
+                solve(l - 1, r, i + 1, str);
+            }
+
+            if (r > 0 && r > l) {
+                str[i] = ')';
+                solve(l, r - 1, i + 1, str);
+            }
+        }
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		solve(3, 3, 0, new char[6]);
+	}
+}
